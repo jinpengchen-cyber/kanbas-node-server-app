@@ -5,7 +5,7 @@ import mongoose from "mongoose";
 // mongoose.connect("mongodb://127.0.0.1:27017/kanbas");
 import session from "express-session";
 const CONNECTION_STRING = process.env.DB_CONNECTION_STRING || 'mongodb://127.0.0.1:27017/kanbas';
-mongoose.connect(CONNECTION_STRING);
+mongoose.connect(CONNECTION_STRING).catch((error) => console.log(error));
 import UserRoutes from './users/routes.js';
 import cors from "cors";
 import CourseRoutes from "./courses/routes.js";
